@@ -51,9 +51,9 @@ def send_dataToFastAPI(url):
 
 NEWS_DATA_API = os.environ.get('NEWSDATA_API_KEY')
 base_url = 'https://newsdata.io/api/1/latest'
-#queries = ['dbs', 'gold', 'deposits', 'mutual', 'dalal', 'sensex', 'nifty', 'gift', 'bank', 'crude', 'oil', 'fed', 'recession']
+queries = ['dbs', 'gold', 'deposits', 'mutual', 'dalal', 'sensex', 'nifty', 'gift', 'bank', 'crude', 'oil', 'fed', 'recession']
 #queries = ['sensex', 'nifty']
-queries = ['STOXX','FTSE','CAC','DAX']
+#queries = ['STOXX','FTSE','CAC','DAX']
 
 for query in queries:
     parameters = {
