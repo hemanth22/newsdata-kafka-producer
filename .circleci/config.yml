@@ -16,7 +16,6 @@ jobs:
             dnf install python312 python3-pip -y
             python3 -V
             python3 -m pip install requests
-            which python312
             /usr/bin/python3.12 -V
             /usr/bin/python3.12 -m ensurepip
             /usr/bin/python3.12 -m pip install pip --upgrade
@@ -35,7 +34,7 @@ workflows:
       - build
     triggers:
       - schedule:
-          cron: "15 7 * * *"
+          cron: "20 7 * * *"
           filters:
             branches:
               only:
