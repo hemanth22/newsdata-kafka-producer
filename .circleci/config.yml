@@ -1,0 +1,42 @@
+version: 2.1
+
+executors:
+  default:
+    docker:
+      - image: quay.io/hemanth22/rockylinux9:9
+
+jobs:
+  build:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: Print Python Verson
+          command: |
+            dnf install python312 python3-pip -y
+            python3 -V
+            python3 -m pip install requests
+            which python312
+            /usr/bin/python3.12 -V
+            /usr/bin/python3.12 -m ensurepip
+            /usr/bin/python3.12 -m pip install pip --upgrade
+      - run:
+          name: Send Message notification to OpenShift
+          command: |
+            echo "Syntax Yet to on-board"
+      - run:
+          name: Send Message notification to OpenShift Serverless Function
+          command: |
+            date
+
+workflows:
+  notify_app:
+    jobs:
+      - build
+    triggers:
+      - schedule:
+          cron: "15 7 * * *"
+          filters:
+            branches:
+              only:
+                - main
