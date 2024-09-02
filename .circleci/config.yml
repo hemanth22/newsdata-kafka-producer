@@ -19,12 +19,13 @@ jobs:
             /usr/bin/python3.12 -V
             /usr/bin/python3.12 -m ensurepip
             /usr/bin/python3.12 -m pip install pip --upgrade
+            /usr/bin/python3.12 -m pip install -r requirements.txt
       - run:
-          name: Send Message notification to OpenShift
+          name: Produce Message and sent to kafka receiver
           command: |
-            echo "Syntax Yet to on-board"
+            /usr/bin/python3.12 newsdata_latest_formatjson.py
       - run:
-          name: Send Message notification to OpenShift Serverless Function
+          name: System date
           command: |
             date
 
