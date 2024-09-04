@@ -7,7 +7,7 @@ import requests
 import os
 import json
 
-requesturl = os.environ.get('KAFKA_RECEIVER')
+requesturl = os.environ.get('KAFKA_RECEIVER_SERVERLESS')
 
 # Kafka configuration
 bootstrap_servers_sv1 = os.environ.get('BOOTSTRAP_SERVER_NAME')
