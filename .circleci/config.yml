@@ -24,6 +24,7 @@ jobs:
           name: Produce Message and sent to kafka receiver
           command: |
             /usr/bin/python3.12 newsdata_latest_formatjson.py
+            /usr/bin/python3.12 newsdata_latest_formatjson_india.py
       - run:
           name: System date
           command: |
