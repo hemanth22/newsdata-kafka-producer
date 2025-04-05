@@ -25,6 +25,9 @@ jobs:
           command: |
             /usr/bin/python3.12 newsdata_latest_formatjson.py
             /usr/bin/python3.12 newsdata_latest_formatjson_india.py
+      - run:
+          name: Produce Message from GNEWS and sent to kafka receiver
+          command: |
             /usr/bin/python3.12 news_api_collector.py
       - run:
           name: System date
