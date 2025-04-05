@@ -25,6 +25,7 @@ jobs:
           command: |
             /usr/bin/python3.12 newsdata_latest_formatjson.py
             /usr/bin/python3.12 newsdata_latest_formatjson_india.py
+            /usr/bin/python3.12 news_api_collector.py
       - run:
           name: System date
           command: |
@@ -36,7 +37,7 @@ workflows:
       - build
     triggers:
       - schedule:
-          cron: "30 3 * * *"
+          cron: "5 11 * * *"
           filters:
             branches:
               only:
