@@ -71,7 +71,7 @@ try:
                      "title": value.get('title','no news'),
                      "description": value.get('description','no news'),
                      "pubDate": value.get('publishedAt','no news'),
-                     "source_id": value.get('url', 'unknown')
+                     "source_id": "gnews"
                  }
              }
              fomratted_output = json.dumps(formatted_json, ensure_ascii=False, indent=4)
